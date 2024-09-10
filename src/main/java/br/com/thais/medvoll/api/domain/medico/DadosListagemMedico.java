@@ -1,4 +1,4 @@
-package br.com.thais.medvoll.api.medico;
+package br.com.thais.medvoll.api.domain.medico;
 
 public record DadosListagemMedico(
 		Long id,

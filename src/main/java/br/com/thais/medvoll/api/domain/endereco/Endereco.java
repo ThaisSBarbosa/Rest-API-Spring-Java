@@ -1,4 +1,4 @@
-package br.com.thais.medvoll.api.endereco;
+package br.com.thais.medvoll.api.domain.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;

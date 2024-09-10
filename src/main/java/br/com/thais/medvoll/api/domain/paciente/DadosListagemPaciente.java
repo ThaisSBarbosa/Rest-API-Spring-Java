@@ -1,11 +1,11 @@
-package br.com.thais.medvoll.api.paciente;
+package br.com.thais.medvoll.api.domain.paciente;
 
-public record DadosDetalhamentoPaciente(
+public record DadosListagemPaciente(
 		Long id,
 		String nome, 
 		String email, 
 		String cpf) {
-	public DadosDetalhamentoPaciente(Paciente paciente) {
+	public DadosListagemPaciente(Paciente paciente) {
 		this(paciente.getId(), paciente.getNome(), paciente.getEmail(), paciente.getCpf());
 	}
 }

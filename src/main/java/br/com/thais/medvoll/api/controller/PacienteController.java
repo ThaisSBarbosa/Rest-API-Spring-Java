@@ -15,15 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
-import br.com.thais.medvoll.api.medico.DadosAtualizacaoMedico;
-import br.com.thais.medvoll.api.medico.DadosDetalhamentoMedico;
-import br.com.thais.medvoll.api.medico.DadosListagemMedico;
-import br.com.thais.medvoll.api.paciente.DadosAtualizacaoPaciente;
-import br.com.thais.medvoll.api.paciente.DadosCadastroPaciente;
-import br.com.thais.medvoll.api.paciente.DadosDetalhamentoPaciente;
-import br.com.thais.medvoll.api.paciente.DadosListagemPaciente;
-import br.com.thais.medvoll.api.paciente.Paciente;
-import br.com.thais.medvoll.api.paciente.PacienteRepository;
+import br.com.thais.medvoll.api.domain.paciente.DadosAtualizacaoPaciente;
+import br.com.thais.medvoll.api.domain.paciente.DadosCadastroPaciente;
+import br.com.thais.medvoll.api.domain.paciente.DadosDetalhamentoPaciente;
+import br.com.thais.medvoll.api.domain.paciente.DadosListagemPaciente;
+import br.com.thais.medvoll.api.domain.paciente.Paciente;
+import br.com.thais.medvoll.api.domain.paciente.PacienteRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 

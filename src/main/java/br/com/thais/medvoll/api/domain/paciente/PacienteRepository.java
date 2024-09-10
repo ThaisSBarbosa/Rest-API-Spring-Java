@@ -1,4 +1,4 @@
-package br.com.thais.medvoll.api.paciente;
+package br.com.thais.medvoll.api.domain.paciente;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

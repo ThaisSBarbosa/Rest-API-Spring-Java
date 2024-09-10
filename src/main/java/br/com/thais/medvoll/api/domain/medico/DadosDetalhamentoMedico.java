@@ -1,6 +1,6 @@
-package br.com.thais.medvoll.api.medico;
+package br.com.thais.medvoll.api.domain.medico;
 
-import br.com.thais.medvoll.api.endereco.Endereco;
+import br.com.thais.medvoll.api.domain.endereco.Endereco;
 
 public record DadosDetalhamentoMedico(
 		Long id, 
