@@ -18,6 +18,8 @@ import br.com.thais.medvoll.api.domain.usuario.Usuario;
 @Service
 public class TokenService {
 	
+	private static final String CONST_ISSUER = "API Voll.med";
+	
 	@Value("${api.security.token.secret}")
 	private String secret;
 	
@@ -25,7 +27,7 @@ public class TokenService {
 		try {
 		    Algorithm algorithm = Algorithm.HMAC256(secret);
 		    return JWT.create()
-		           .withIssuer("API Voll.med")
+		           .withIssuer(CONST_ISSUER)
 		           .withSubject(usuario.getLogin())
 		           .withExpiresAt(dataExpiracao())
 		           .sign(algorithm);
@@ -38,7 +40,7 @@ public class TokenService {
 		try {
 		    Algorithm algorithm = Algorithm.HMAC256(secret);
 		    return JWT.require(algorithm)
-		    	   .withIssuer("API Voll.med")
+		    	   .withIssuer(CONST_ISSUER)
 		           .build()
 		           .verify(tokenJwt)
 		           .getSubject();

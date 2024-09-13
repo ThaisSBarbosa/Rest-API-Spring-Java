@@ -20,17 +20,22 @@ import jakarta.validation.Valid;
 public class AutenticacaoController {
 	@Autowired
 	private AuthenticationManager manager;
-	
+
 	@Autowired
 	private TokenService tokenService;
-	
+
 	@PostMapping
 	public ResponseEntity efetuarLogin(@RequestBody @Valid DadosAutenticacao dados) {
-		var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
-		var authentication = manager.authenticate(authenticationToken);
-		
-		var tokenJwt = tokenService.gerarToken((Usuario)authentication.getPrincipal());
-		
-		return ResponseEntity.ok(new DadosTokenJWT(tokenJwt));
+		try {
+			var authenticationToken = new UsernamePasswordAuthenticationToken(dados.login(), dados.senha());
+			var authentication = manager.authenticate(authenticationToken);
+
+			var tokenJwt = tokenService.gerarToken((Usuario) authentication.getPrincipal());
+
+			return ResponseEntity.ok(new DadosTokenJWT(tokenJwt));
+		} catch (Exception e) {
+			e.printStackTrace();
+			return ResponseEntity.badRequest().body(e.getMessage());
+		}
 	}
 }
