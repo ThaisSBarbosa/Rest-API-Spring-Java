@@ -1,17 +1,17 @@
-package br.com.thais.medvoll.api.domain.consulta.validacoes;
+package br.com.thais.medvoll.api.domain.consulta.validacoes.agendamento;
 
 import java.time.DayOfWeek;
 
 import org.springframework.stereotype.Component;
 
-import br.com.thais.medvoll.api.domain.ValidacaoException;
 import br.com.thais.medvoll.api.domain.consulta.DadosAgendamentoConsulta;
+import br.com.thais.medvoll.api.infra.exception.ValidacaoException;
 
 @Component
 public class ValidadorHorarioFuncionamentoClinica implements ValidadorAgendamentoDeConsulta {
 
 	@Override
-	public void validar(DadosAgendamentoConsulta dados) {
+	public void valida(DadosAgendamentoConsulta dados) {
 		var dataConsulta = dados.data();
 
         var domingo = dataConsulta.getDayOfWeek().equals(DayOfWeek.SUNDAY);

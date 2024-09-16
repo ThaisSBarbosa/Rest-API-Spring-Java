@@ -16,7 +16,8 @@ public interface MedicoRepository extends JpaRepository<Medico, Long>{
 	        AND m.especialidade = :especialidade
 	        AND m.id NOT IN (
 	            SELECT c.medico_id FROM consultas c
-	            WHERE c.data = :data
+	            WHERE c.data = :data 
+	            and c.motivo_cancelamento is null
 	        )
 	        """, nativeQuery = true)
 	Page<Medico> escolherMedicoLivreNaData(Especialidade especialidade, LocalDateTime data, Pageable pageable);

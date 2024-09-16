@@ -1,11 +1,11 @@
-package br.com.thais.medvoll.api.domain.consulta.validacoes;
+package br.com.thais.medvoll.api.domain.consulta.validacoes.agendamento;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import br.com.thais.medvoll.api.domain.ValidacaoException;
 import br.com.thais.medvoll.api.domain.consulta.DadosAgendamentoConsulta;
 import br.com.thais.medvoll.api.domain.medico.MedicoRepository;
+import br.com.thais.medvoll.api.infra.exception.ValidacaoException;
 
 @Component
 public class ValidadorMedicoAtivo implements ValidadorAgendamentoDeConsulta {
@@ -14,7 +14,7 @@ public class ValidadorMedicoAtivo implements ValidadorAgendamentoDeConsulta {
     private MedicoRepository repository;
 
 	@Override
-	public void validar(DadosAgendamentoConsulta dados) {
+	public void valida(DadosAgendamentoConsulta dados) {
         //escolha do medico opcional
         if (dados.idMedico() == null) {
             return;
