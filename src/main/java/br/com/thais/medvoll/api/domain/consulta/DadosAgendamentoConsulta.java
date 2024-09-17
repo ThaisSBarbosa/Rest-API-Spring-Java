@@ -11,7 +11,7 @@ public record DadosAgendamentoConsulta(
 
         @NotNull
         Long idPaciente,
-
+ 
         @NotNull
         @Future
         LocalDateTime data,
